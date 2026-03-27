@@ -1,1 +1,32 @@
-Code from old project kind of similar to this
+# CMPT 276 Media Summary App
+
+## Setup locally
+
+1. Clone repository to your system and enter it
+
+```
+git clone https://github.com/ethan-btst/340_jumpstart.git
+cd 340_jumpstart
+```
+
+2. Option a. Set up the virtual environment using:
+
+```
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+flask run
+```
+
+2. Option b. Or when debugging (So you don't have to restart flask server after changes):
+
+- Also be sure to clear cookies (or test incognito) cause login cookies may be saved (Especially when trying to debug not logged in cases)
+
+```
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+flask --app app.py --debug run
+```
+
+3. Create the '.env' for the your api key
