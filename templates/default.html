@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CMPT 340</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/default.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="Navbar">
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="https://github.com/sfu-cmpt340/2026_1_project_16">GitHub</a>
+      </li>
+    </ul>
+  </div>
+
+  {% if result %}
+  <section class="result">
+    <h2>Response</h2>
+    <img src="data:image/png;base64,{{ image }}" alt="Uploaded image" />
+    <p>{{ result }}</p>
+    <br />
+  </section>
+  {% endif %}
+
+  <!-- Submit image and additional questions for analysis -->
+  <form action="/" method="post" enctype=multipart/form-data>
+    <h2>Text here (maybe questions for LLM?)</h2>
+    <textarea rows="4" cols="30" name="chatbox" placeholder="Some default text"></textarea>
+
+    <label for="image" id="image">Upload Image to analyze:</label>
+    <input type="file" name="image" id="image" accept="image/*">
+
+    <br>
+    <input type="submit" name="submit" value="Submit">
+    <input type="submit" id="Clear" name="submit" value="Clear response">
+  </form>
+
+</body>
+
+</html>
